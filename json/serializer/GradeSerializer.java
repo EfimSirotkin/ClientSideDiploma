@@ -1,6 +1,7 @@
-package sample.json;
+package sample.json.serializer;
 
 import sample.json.interfaces.JsonSerializable;
+import sample.json.serializer.AbstractJsonSerializer;
 import sample.objects.Grade;
 
 import java.util.ArrayList;

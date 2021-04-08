@@ -1,10 +1,10 @@
-package sample.json;
+package sample.json.serializer;
 
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public final class AbstractJsonSerializer {
+public class AbstractJsonSerializer {
 
     private static Gson jsonSerializer;
 
