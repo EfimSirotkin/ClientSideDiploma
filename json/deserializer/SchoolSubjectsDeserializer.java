@@ -1,5 +1,6 @@
 package sample.json.deserializer;
 
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import sample.json.interfaces.JsonDeserializable;
 import sample.objects.Subject;
@@ -11,7 +12,7 @@ public class SchoolSubjectsDeserializer extends GeneralDeserializer implements J
     @Override
     public ArrayList<Subject> deserialize(String deserializableString) {
         Type type = new TypeToken<ArrayList<Subject>>(){}.getType();
-        ArrayList<Subject> dsSchoolSubjects = getJsonDeserializer().fromJson(deserializableString, type);
+        ArrayList<Subject> dsSchoolSubjects = SchoolSubjectsDeserializer.getInstance().fromJson(deserializableString, type);
         return dsSchoolSubjects;
     }
 }

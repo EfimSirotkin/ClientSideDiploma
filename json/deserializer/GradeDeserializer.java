@@ -11,7 +11,7 @@ public class GradeDeserializer extends GeneralDeserializer implements JsonDeseri
     @Override
     public ArrayList<Grade> deserialize(String deserializableString) {
         Type type = new TypeToken<ArrayList<Grade>>(){}.getType();
-        ArrayList<Grade> dsGrades = getJsonDeserializer().fromJson(deserializableString, type);
+        ArrayList<Grade> dsGrades = GradeDeserializer.getInstance().fromJson(deserializableString, type);
         return dsGrades;
     }
 }

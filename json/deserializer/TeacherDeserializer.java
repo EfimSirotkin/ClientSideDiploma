@@ -11,7 +11,7 @@ public class TeacherDeserializer extends  GeneralDeserializer implements JsonDes
     @Override
     public ArrayList<Teacher> deserialize(String deserializableString) {
         Type type = new TypeToken<ArrayList<Teacher>>(){}.getType();
-        ArrayList<Teacher> dsSchoolTeachers = getJsonDeserializer().fromJson(deserializableString, type);
+        ArrayList<Teacher> dsSchoolTeachers = TeacherDeserializer.getInstance().fromJson(deserializableString, type);
         return dsSchoolTeachers;
     }
 }

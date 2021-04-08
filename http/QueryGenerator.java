@@ -1,8 +1,6 @@
 package sample.http;
 
-import java.io.InputStream;
 import java.net.URI;
-import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
@@ -43,7 +41,6 @@ public class QueryGenerator {
                 .uri(URI.create("http://localhost:8001/get-schoolclasses"))
                 .build();
         return getResponseResults();
-
     }
 
     public String querySubjects() {
@@ -54,8 +51,9 @@ public class QueryGenerator {
     }
 
     private String getResponseResults() {
-        CompletableFuture<HttpResponse<String>> response = CustomHttpClientSingleton.getInstance().sendAsync(customRequest, HttpResponse.BodyHandlers.ofString());
+        CompletableFuture<HttpResponse<String>>response = CustomHttpClientSingleton.getInstance().sendAsync(customRequest, HttpResponse.BodyHandlers.ofString());
         String result = response.thenApply(HttpResponse::body).join();
+
         return result;
     }
 

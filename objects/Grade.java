@@ -5,6 +5,8 @@ public class Grade {
     private String dateTime;
     private int value;
 
+    public Grade() {}
+
     public Grade(String dateTime, int value) {
         this.dateTime = dateTime;
         this.value = value;

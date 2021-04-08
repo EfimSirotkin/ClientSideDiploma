@@ -1,6 +1,7 @@
 package sample.http;
 
 
+
 import java.net.http.HttpClient;
 
 public final class CustomHttpClientSingleton {

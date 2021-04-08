@@ -11,7 +11,8 @@ public class PupilDeserializer extends GeneralDeserializer implements JsonDeseri
     @Override
     public ArrayList<Pupil> deserialize(String deserializableString) {
         Type type = new TypeToken<ArrayList<Pupil>>(){}.getType();
-        ArrayList<Pupil> dsPupils = getJsonDeserializer().fromJson(deserializableString, type);
+        ArrayList<Pupil> dsPupils = PupilDeserializer.getInstance().fromJson(deserializableString, type);
+
         return dsPupils;
     }
 }

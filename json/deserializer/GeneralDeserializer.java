@@ -4,19 +4,19 @@ import com.google.gson.Gson;
 
 public class GeneralDeserializer {
 
-    private static GeneralDeserializer instance;
     private static Gson jsonDeserializer;
 
-    public GeneralDeserializer() {}
-
-    public static GeneralDeserializer getInstance() {
-        if(instance == null)
-        {
-            instance = new GeneralDeserializer();
-            jsonDeserializer = new Gson();
-        }
-        return instance;
+    GeneralDeserializer() {
+        jsonDeserializer = new Gson();
     }
+
+    public static Gson getInstance()
+    {
+        if(jsonDeserializer == null)
+            jsonDeserializer = new Gson();
+        return jsonDeserializer;
+    }
+
 
     public static  Gson getJsonDeserializer() {
         return jsonDeserializer;
